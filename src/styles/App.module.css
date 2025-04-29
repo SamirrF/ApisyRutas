@@ -1,0 +1,108 @@
+/* Contenedor principal */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+/* Grupo de botones */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Estilo base para botones */
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Botón GET */
+.getButton {
+  composes: button;
+  background: #4CAF50;
+  box-shadow: 0 4px 0 #3e8e41;
+}
+
+/* Botón POST */
+.postButton {
+  composes: button;
+  background: #2196F3;
+  box-shadow: 0 4px 0 #0b7dda;
+}
+
+/* Efectos hover/active */
+.getButton:hover, 
+.postButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+}
+
+.getButton:active, 
+.postButton:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+
+/* Contenedor principal de imágenes */
+.imageContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Cada columna de imagen */
+.imageWrapper {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para las imágenes */
+.animalImage {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 1rem;
+}
+
+/* Botón para obtener ambas imágenes */
+.bothButton {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #2196F3 100%);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.bothButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bothButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
