@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import styles from '../styles/App.module.css';
 
 const GetPage = () => {
@@ -20,8 +21,8 @@ const GetPage = () => {
         apiUrl = 'https://api.thecatapi.com/v1/images/search';
       }
 
-      const response = await fetch(apiUrl);
-      const data = await response.json();
+      const response = await axios.get(apiUrl);
+      const data = response.data;
 
       if (animal === 'dog') {
         setDogImage(data.message);
@@ -41,9 +42,7 @@ const GetPage = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1>Comparador de Mascotas</h1>
-      
+    <div className={styles.container}>    
       <div className={styles.buttonGroup}>
         <button
           onClick={() => fetchAnimalImage('dog')}
